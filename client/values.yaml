@@ -1,0 +1,7 @@
+service_name: client
+name: client
+service_url: client
+deployment_target: openshift
+docker_image: ahmedyousseff/client:c7
+namespace: sniper-000x-dev
+host: swissding.ch

@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: {{ .Values.service_name }}
+    template: {{ .Values.service_name }}
+  name: {{ .Values.service_name }}
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.host }}
+      secretName: tls-secret
+  rules:
+    - host: {{ .Values.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.service_name }}
+                port:
+                  number: 4200

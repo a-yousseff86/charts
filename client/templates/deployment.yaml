@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ quote .Values.name }}
+  name: {{ quote .Values.name }}
+  namespace: sniper-000x-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ quote .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ quote .Values.name }}
+    spec:
+      containers:
+        - image: {{ .Values.docker_image }}
+          imagePullPolicy: Always
+          name: client
+          ports:
+            - containerPort: 4200
+              protocol: TCP
+
