@@ -2,23 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ quote .Values.name }}
-  name: {{ quote .Values.name }}
+    app: client
+  name: client
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ quote .Values.name }}
+      app: client
   template:
     metadata:
       labels:
-        app: {{ quote .Values.name }}
+        app: client
     spec:
       containers:
-        - image: {{ .Values.docker_image }}
+        - image: ahmedyousseff/client:c8
           imagePullPolicy: Always
           name: client
           ports:
             - containerPort: 80
               protocol: TCP
-
