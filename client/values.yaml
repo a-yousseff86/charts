@@ -2,4 +2,4 @@ service_name: client
 name: client
 service_url: client
 docker_image: ahmedyousseff/client:c8
-host: swissding.ch
+host: ec2-35-176-2-41.eu-west-2.compute.amazonaws.com
