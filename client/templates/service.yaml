@@ -14,6 +14,7 @@ spec:
       port: 4200
       protocol: TCP
       targetPort: 4200
+      nodePort: 30040
   selector:
     app: {{ .Values.service_name }}
-  type: ClusterIP
+  type: NodePort
