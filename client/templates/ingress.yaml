@@ -1,17 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: client-ingress
+  name: client
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-  labels:
-    app: client
-    app.kubernetes.io/managed-by: Helm
-    template: client
 spec:
   ingressClassName: nginx
   rules:
-    - host: ec2-35-176-2-41.eu-west-2.compute.amazonaws.com
+    - host: www.swissding.ch
       http:
         paths:
           - path: /
