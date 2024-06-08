@@ -1,5 +1,5 @@
 service_name: client
 name: client
 service_url: client
-docker_image: ahmedyousseff/client:c7
+docker_image: ahmedyousseff/client:c8
 host: swissding.ch

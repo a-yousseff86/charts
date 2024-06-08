@@ -8,10 +8,6 @@ metadata:
     template: {{ .Values.service_name }}
   name: {{ .Values.service_name }}
 spec:
-  tls:
-    - hosts:
-        - {{ .Values.host }}
-      secretName: tls-secret
   rules:
     - host: {{ .Values.host }}
       http:
@@ -22,4 +18,4 @@ spec:
               service:
                 name: {{ .Values.service_name }}
                 port:
-                  number: 4200
+                  number: 80
