@@ -1,21 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: client-ingress
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
   labels:
-    app: {{ .Values.service_name }}
-    template: {{ .Values.service_name }}
-  name: {{ .Values.service_name }}
+    app: client
+    app.kubernetes.io/managed-by: Helm
+    template: client
 spec:
+  ingressClassName: nginx
   rules:
-    - host: {{ .Values.host }}
+    - host: ec2-35-176-2-41.eu-west-2.compute.amazonaws.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.service_name }}
+                name: client
                 port:
                   number: 80
