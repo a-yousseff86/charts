@@ -5,7 +5,7 @@ metadata:
     app: client
   name: client
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: client
@@ -15,9 +15,9 @@ spec:
         app: client
     spec:
       containers:
-        - image: 422075260781.dkr.ecr.eu-west-2.amazonaws.com/swissding-client-app:latest
+        - image: 422075260781.dkr.ecr.eu-west-2.amazonaws.com/client:latest
           imagePullPolicy: Always
           name: client
           ports:
-            - containerPort: 4200
+            - containerPort: 80
               protocol: TCP
