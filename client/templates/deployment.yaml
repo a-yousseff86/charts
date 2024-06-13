@@ -15,7 +15,7 @@ spec:
         app: client
     spec:
       containers:
-        - image: ahmedyousseff/client:c8
+        - image: ahmedyousseff/client:v1
           imagePullPolicy: Always
           name: client
           ports:
