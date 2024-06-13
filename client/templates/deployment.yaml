@@ -15,7 +15,7 @@ spec:
         app: client
     spec:
       containers:
-        - image: ahmedyousseff/client:v1
+        - image: 422075260781.dkr.ecr.eu-west-2.amazonaws.com/swissding-client-app:latest
           imagePullPolicy: Always
           name: client
           ports:
