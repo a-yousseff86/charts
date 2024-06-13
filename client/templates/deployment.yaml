@@ -19,5 +19,5 @@ spec:
           imagePullPolicy: Always
           name: client
           ports:
-            - containerPort: 80
+            - containerPort: 4200
               protocol: TCP
